@@ -1,10 +1,14 @@
 package app.metier.models;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Produit {
 	private int idProduct;
 	private String productName;
-	private int productQuantity;
-	private double productPrice;
 	public Produit() {
 		// TODO Auto-generated constructor stub
 	}
@@ -22,17 +26,34 @@ public class Produit {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public int getProductQuantity() {
-		return productQuantity;
+	
+	
+	//Crearion de la methode enregistrer*
+	public void enregistrer(Produit pd) {
+		String sql = "INSERT INTO produit(nomProduit) VALUES(?)";
+		Connection connection =null;
+		DBA bd = new DBA();
+		connection = bd.seconnecter();
+		PreparedStatement pst = null;
+		
+		try {
+			pst = connection.prepareStatement(sql);
+			pst.setString(1,pd.getProductName());
+			int i = pst.executeUpdate();
+			if(i!=0) System.out.println("Reussi !");
+			else System.out.println(" non reussi !");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	public void setProductQuantity(int productQuantity) {
-		this.productQuantity = productQuantity;
-	}
-	public double getProductPrice() {
-		return productPrice;
-	}
-	public void setProductPrice(double productPrice) {
-		this.productPrice = productPrice;
+	
+	//Mehode get data
+	public List<Produit> getProduits(Produit pd){
+		List<Produit> lpds = new ArrayList<Produit>();
+		
+		
+		return lpds;
 	}
 	
 
