@@ -21,7 +21,7 @@ public class Login extends HttpServlet {
 	 public static final String ATT_FORM         = "form";
 	 public static final String ATT_SESSION_USER = "sessionUtilisateur";
 	 public static final String VUE              = "/WEB-INF/login.jsp";
-	 public static final String VUE1              = "/WEB-INF/index.jsp";
+	 public static final String VUE1              = "/index.jsp";
 	    
        
     /**

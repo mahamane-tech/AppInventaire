@@ -6,73 +6,135 @@
 <meta charset="UTF-8">
 <title>GESTION DES INVENTAIRES</title>
 <style type="text/css">
-	body, .contact{
-		color: white;
-		height: 100vh;
-		background-color:black;
-		
-		
-	}
-	.contact h2,legend{
-		font-family: "Roboto",sans-serif;
-		font-size: 28px;
-		color: white;
-		text-shadow: 2px 2px black;
-		margin: 0 0 40px 30px;
-		padding-top: 40px;
-			}
-			
-	legend{
-	border: none;}		
-			
-	.formAndTable{
-	display: flex;
-	width: 100%;
-	justify-content: space-evenly;
-	flex-direction: column;
-	
-	}
-	form{
-		width: 40%;
-		padding: 0 10px;
-	}
-	form label{
-	font-family: "Roboto",sans-serif;
-	color: white;
-	text-shadow: 2px 2px black;
-	display: block;
-	margin-bottom: 10px;
-}
-form .btn input {
-	font-family: "Roboto",sans-serif;
-	font-size: 17px; 
-	background-color: #135e46;
-	color: white; 
-	padding: 10px;  
-	border: 0;
-	border-radius: 10px;
-	width: 100%; 
-	margin-bottom: 10px;
-	cursor: pointer;
-	transition:0.3s all;
-}
-form .btn input:hover {
-	background-color: white;
-	color:  #135e46;
-	transform:scale(0.9);
-	box-shadow: 2px 2px black;
-	font-family: "Roboto",sans-serif;
+	/* ===== GLOBAL ===== */
+body {
+    background: linear-gradient(135deg, #020617, #0f172a);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #e5e7eb;
 }
 
-form p input {
-	box-sizing:border-box;
-	border: none;
-	width: 100%;
-	padding: 10px;
-	border-radius: 10px;
-	border-color: #135e46;
-	
+/* ===== CONTAINER FORM ===== */
+.form-container {
+    background: #111827;
+    padding: 30px;
+    border-radius: 16px;
+    width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
+
+/* ===== TITRES ===== */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+/* ===== LABELS ===== */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* ===== INPUTS ===== */
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+input:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34,197,94,0.3);
+}
+
+/* ===== BOUTONS ===== */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Valider */
+.btn-success {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #022c22;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(34,197,94,0.4);
+}
+
+/* Annuler */
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    margin-top: 10px;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(239,68,68,0.4);
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background: #020617;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+th {
+    background: #111827;
+    color: #22c55e;
+    padding: 14px;
+    text-align: left;
+    font-size: 14px;
+}
+
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #1e293b;
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #0f172a;
+}
+
+/* ===== ACTIONS ===== */
+a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 	
 
 </style>
@@ -110,7 +172,7 @@ form p input {
 			</p>
 		
 			<p class="btn">
-				<input type="submit" name="mod" value="Valider"/>
+				<input type="submit" name="mod" value="Valider" class=".btn-success"/>
 				<input type="reset" name="res" value="Annuler"/>
 			</p>
 		</fieldset>
