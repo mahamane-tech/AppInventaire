@@ -83,8 +83,8 @@ public class Produit {
 				lpds.add(pds);
 
 			}
-			}
-finally {
+		
+ {
     try {
         if (rs != null) rs.close();
     } catch (SQLException ignore) {}
@@ -102,7 +102,7 @@ finally {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-;		
+		
 		return lpds;
 	}
 	
