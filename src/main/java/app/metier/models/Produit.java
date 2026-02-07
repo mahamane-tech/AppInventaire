@@ -81,6 +81,7 @@ public class Produit {
 				pds.setIdProduct(rs.getInt("idproduit"))	;
 				pds.setProductName(rs.getString("nomProduit"));
 				lpds.add(pds);
+<<<<<<< HEAD
 			}
 			if(rs!= null) {
 			    try {
@@ -94,6 +95,14 @@ public class Produit {
 			}
 			connection.close();
 		
+=======
+				
+			}
+			
+			rs.close();
+			pst.close();
+			connection.close();
+>>>>>>> 6ffefa34d5963202e4a196e2370154593b240843
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
