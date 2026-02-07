@@ -40,10 +40,23 @@ public class Produit {
 		
 		try {
 			pst = connection.prepareStatement(sql);
-			pst.setString(1,pd.getProductName());
+			pst.setString(1, pd.getProductName());
 			int i = pst.executeUpdate();
 			if(i!=0) System.out.println("Reussi !");
 			else System.out.println(" non reussi !");
+			if(pst!= null) {
+			    try {
+			        pst.close();
+			    } catch ( SQLException ignore ) {
+		}
+		if(connection != null) {
+			try {
+				connection.close();
+			}
+			catch(SQLException ignore) {
+				
+			}
+		}}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -65,20 +78,31 @@ public class Produit {
 			rs = pst.executeQuery(sql);
 			while(rs.next()) {
 				Produit  pds = new Produit();
-				pds.setIdProduct(rs.getInt(1));
-				pds.setProductName(rs.getString(2));
+				pds.setIdProduct(rs.getInt("idproduit"))	;
+				pds.setProductName(rs.getString("nomProduit"));
 				lpds.add(pds);
-				
+
 			}
-			
-			rs.close();
-			pst.close();
-			connection.close();
+		
+ {
+    try {
+        if (rs != null) rs.close();
+    } catch (SQLException ignore) {}
+
+    try {
+        if (pst != null) pst.close();
+    } catch (SQLException ignore) {}
+
+    try {
+        if (connection != null) connection.close();
+    } catch (SQLException ignore) {}
+}
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-;		
+		
 		return lpds;
 	}
 	

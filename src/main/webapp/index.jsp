@@ -5,18 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>App Inventaire</title>
-<<<<<<< HEAD
-</head>
-<body>
-<div class="container">
-	<%@ include file="/WEB-INF/header.jsp" %>
-	<%@ include file="/WEB-INF/asside.jsp" %>
-	<div class="content">
-		
-	</div>
-	<%@ include file="/WEB-INF/footer.jsp" %>
-</div>
-=======
+
 <link rel="stylesheet" type="text/css" href="../CSS/home.css">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <style type="text/css">
@@ -257,7 +246,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="ListerProd">
                 <i class="fa-solid fa-box-open"></i> Produits
             </a>
         </li>
@@ -297,6 +286,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </section>
 
 </div>	
->>>>>>> 72924bfd2d1baa7abb29300bbb0a9e522dc193af
+
 </body>
 </html>
